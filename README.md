@@ -1,3 +1,5 @@
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/NuclearPhysicist/styrene-accident-physics-modeling/blob/main/styrene_accident_manaus.ipynb)
+
 # Computational Modeling of a Styrene Accident Scenario in Manaus
 
 This repository contains a computational investigation of physical phenomena associated with a styrene spill accident scenario in Manaus, Brazil.
