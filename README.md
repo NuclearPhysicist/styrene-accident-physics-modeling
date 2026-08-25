@@ -24,6 +24,14 @@ The notebook explores simplified mathematical and physical models to estimate an
 
 The objective is not to reproduce the complete industrial accident with a high-fidelity engineering simulation. Instead, the project uses physically grounded simplified models to investigate how different phenomena can be connected and analyzed computationally.
 
+## Example Result
+
+### Temperature Evolution
+
+The figure below illustrates the temperature evolution obtained from the simplified thermal model implemented in the notebook.
+
+![Temperature Evolution](figures/temperature_evolution.png)
+
 ## Educational Context
 
 This project was developed as an investigative and interdisciplinary approach to Physics education.
