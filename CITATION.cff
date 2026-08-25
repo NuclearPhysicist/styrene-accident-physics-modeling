@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this project, please cite it as follows."
+title: "Computational Modeling of a Styrene Accident Scenario in Manaus"
+type: software
+authors:
+  - family-names: "Pessoa"
+    given-names: "Paulo Igor"
+repository-code: "https://github.com/NuclearPhysicist/styrene-accident-physics-modeling"
+license: MIT
+date-released: 2026-08-25
