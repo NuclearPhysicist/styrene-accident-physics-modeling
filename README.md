@@ -32,6 +32,12 @@ The figure below illustrates the temperature evolution obtained from the simplif
 
 ![Temperature Evolution](figures/temperature_evolution.png)
 
+### Atmospheric Dispersion
+
+The figure below illustrates an example of the atmospheric dispersion analysis obtained using the simplified computational model implemented in the notebook.
+
+![Atmospheric Dispersion](figures/atmospheric_dispersion.png)
+
 ## Educational Context
 
 This project was developed as an investigative and interdisciplinary approach to Physics education.
