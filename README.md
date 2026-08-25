@@ -79,11 +79,18 @@ The internal pressure is used to estimate the mechanical stress imposed on the s
 
 Simplified dispersion models are used to investigate the transport of released material in the atmosphere.
 
-## Repository Structure
+## Requirements
 
-```text
-styrene-accident-physics-modeling/
-│
-├── README.md
-├── LICENSE
-└── styrene_accident_manaus.ipynb
+The computational notebook was developed using Python and the following libraries:
+
+- NumPy
+- Matplotlib
+- Requests
+- Pillow
+
+The required dependencies are listed in the `requirements.txt` file.
+
+They can be installed using:
+
+```bash
+pip install -r requirements.txt
