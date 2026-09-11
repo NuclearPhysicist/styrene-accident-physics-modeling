@@ -4,7 +4,7 @@ title: "Computational Modeling of a Styrene Accident Scenario in Manaus"
 type: software
 authors:
   - family-names: "Pessoa"
-    given-names: "Paulo Igor"
+    given-names: "Paulo Igor de Oliveira"
 repository-code: "https://github.com/NuclearPhysicist/styrene-accident-physics-modeling"
 license: MIT
 date-released: 2026-08-25
