@@ -1,112 +1,156 @@
+
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/NuclearPhysicist/styrene-accident-physics-modeling/blob/main/styrene_accident_manaus.ipynb)
 
-# Computational Modeling of a Styrene Accident Scenario in Manaus
+# Computational Modeling of Heat Transfer in a Styrene Storage Tank in Manaus
 
-This repository contains a computational investigation of physical phenomena associated with a styrene spill accident scenario in Manaus, Brazil.
+This repository presents a computational investigation of heat transfer in a styrene storage tank associated with the industrial incident reported in Manaus, Brazil, in July 2026.
 
-The project was developed as an investigative teaching approach for Physics education, combining thermodynamics, heat transfer, fluid mechanics, atmospheric dispersion, chemical processes, and structural analysis.
+The project was developed as an investigative learning resource for Physics education, combining physical modeling, meteorological data, numerical calculations, and graphical analysis.
 
 ## Overview
 
-The computational model investigates physical phenomena associated with the heating and release of styrene from a storage tank.
+The computational notebook investigates how environmental conditions influence the thermal behavior of styrene stored in an industrial tank.
 
-The notebook explores simplified mathematical and physical models to estimate and analyze:
+The model considers:
 
-- Temperature evolution;
-- Heat transfer;
-- Styrene evaporation;
-- Internal pressure;
-- Vapor pressure using the Clausius–Clapeyron equation;
-- Polymerization;
-- Energy release;
-- Structural effects on the storage tank;
-- Atmospheric dispersion of the released material.
+- Solar radiation absorbed by the tank;
+- Convective heat transfer between the tank and ambient air;
+- An illustrative analysis of heat conduction through the steel wall;
+- The global energy balance and temperature evolution of the styrene;
+- Thermal power and accumulated energy over time.
 
-The objective is not to reproduce the complete industrial accident with a high-fidelity engineering simulation. Instead, the project uses physically grounded simplified models to investigate how different phenomena can be connected and analyzed computationally.
+The main research question is:
 
-## Example Result
+**Are solar radiation and convection sufficient to explain the temperatures reported during the incident?**
 
-### Temperature Evolution
+The model is a simplified educational representation and does not aim to reproduce the complete industrial accident.
 
-The figure below illustrates the temperature evolution obtained from the simplified thermal model implemented in the notebook.
+## Example Results
 
-![Temperature Evolution](figures/temperature_evolution.png)
+### Meteorological Conditions
 
-### Atmospheric Dispersion
+Hourly solar irradiation, air temperature, and wind speed were obtained from NASA POWER. The reference data correspond to July 15, 2025, because data for the incident date in 2026 were not available when the study was prepared.
 
-The figure below illustrates an example of the atmospheric dispersion analysis obtained using the simplified computational model implemented in the notebook.
+These data represent a reference scenario, not a reconstruction of the actual weather conditions during the incident.
 
-![Atmospheric Dispersion](figures/atmospheric_dispersion.png)
+![Meteorological Conditions](figures/meteorologia.png)
+
+### Accumulated Thermal Energy
+
+The notebook calculates the energy contributions from solar radiation and convection and their combined effect over the simulated period.
+
+![Accumulated Thermal Energy](figures/energiaacumulada.png)
 
 ## Educational Context
 
-This project was developed as an investigative and interdisciplinary approach to Physics education.
+The notebook supports investigative learning through the application of Physics concepts to a real-world technological scenario.
 
-The accident scenario provides a real-world context for the application of fundamental concepts from:
+Topics include:
 
-- Thermodynamics;
-- Heat transfer;
-- Ideal gas behavior;
-- Phase equilibrium;
-- Chemical processes and polymerization;
-- Energy conservation;
-- Mechanical stress;
-- Atmospheric dispersion.
-
-The notebook combines theoretical discussion, mathematical equations, numerical calculations, graphical visualization, and computational modeling.
+- Heat and temperature;
+- Thermal capacity;
+- Solar radiation and absorbed power;
+- Convection and Newton's law of cooling;
+- Heat conduction through a solid wall;
+- Conservation of energy and global energy balance;
+- Numerical integration and graphical interpretation;
+- Assumptions and limitations of physical models.
 
 ## Computational Notebook
 
-The main notebook of this repository is:
+The main notebook is:
 
 `styrene_accident_manaus.ipynb`
 
-It contains the complete sequence of calculations, explanations, equations, Python code, and graphical results developed for the project.
+It contains explanatory text, equations, editable parameters, Python code, numerical calculations, and graphical results.
+
+### Main Sections
+
+1. **Libraries:** imports the required Python libraries.
+2. **Editable Parameters:** defines tank geometry and model parameters.
+3. **Tank Data:** calculates geometric properties and estimates the steel shell mass.
+4. **Styrene Properties:** defines the thermophysical properties used in the model.
+5. **Environmental Conditions:** loads and processes meteorological data from NASA POWER.
+6. **Heat Transfer:** calculates heat-transfer areas, styrene mass, solar absorption, convection, an illustrative wall-conduction estimate, and the global energy balance.
 
 ## Main Physical Models
 
-The following models are explored throughout the notebook.
+### 1. Solar Radiation
 
-### 1. Heat Transfer
+The absorbed solar power is estimated using the solar absorptivity, incident irradiance, and projected area of the tank.
 
-Estimation of the temperature evolution of the styrene and the associated energy transfer.
+### 2. Convection
 
-### 2. Evaporation
+Heat transfer between the tank and ambient air is estimated using Newton's law of cooling and an empirical correlation for the convective heat-transfer coefficient.
 
-Estimation of the amount of styrene that could be vaporized as a consequence of the thermal energy available.
+### 3. Heat Conduction
 
-### 3. Internal Pressure
+Fourier's law is used in a separate illustrative calculation to estimate the temperature difference across the steel wall. Conduction is not included as an independent term in the main energy balance.
 
-A simplified upper-bound estimate based on the Ideal Gas Law is compared with a more realistic equilibrium approach based on vapor pressure.
+### 4. Global Energy Balance
 
-### 4. Vapor Pressure
+Solar and convective heat-transfer rates are combined in a lumped-capacitance model to estimate the mean temperature evolution of the styrene over the simulated period.
 
-The integrated Clausius–Clapeyron equation is used to estimate the variation of styrene vapor pressure with temperature.
+## Meteorological Data
 
-### 5. Polymerization
+Data are obtained from the NASA POWER Data Access Viewer:
 
-The potential contribution of polymerization to the energy balance of the accident scenario is investigated.
+https://power.larc.nasa.gov/data-access-viewer/
 
-### 6. Structural Analysis
+The notebook uses the following hourly variables:
 
-The internal pressure is used to estimate the mechanical stress imposed on the storage tank.
+- All Sky Surface Shortwave Downward Irradiance;
+- Temperature at 2 Meters;
+- Wind Speed at 10 Meters.
 
-### 7. Atmospheric Dispersion
+Instructions for downloading and loading the data are provided in the notebook.
 
-Simplified dispersion models are used to investigate the transport of released material in the atmosphere.
+## Running the Notebook
+
+1. Click **Open in Colab** at the top of this page.
+2. Save a copy to Google Drive if you want to edit the notebook.
+3. Run the cells in order, starting from the beginning.
+4. Upload the CSV file downloaded from NASA POWER when prompted.
+5. To test alternative scenarios, modify the editable parameters and rerun the dependent cells.
 
 ## Requirements
 
-The computational notebook was developed using Python and the following libraries:
+The notebook uses Python and the following libraries:
 
 - NumPy
 - Matplotlib
-- Requests
-- Pillow
+- Pandas
 
-The required dependencies are listed in the `requirements.txt` file.
-
-They can be installed using:
+Dependencies can be installed using:
 
 ```bash
 pip install -r requirements.txt
+```
+
+Google Colab generally provides these libraries by default.
+
+## Scope and Limitations
+
+The model is intended for educational investigation and does not establish the cause of the actual incident.
+
+Its main limitations are:
+
+- Meteorological data from July 15, 2025, are used as a reference scenario.
+- Some tank dimensions and construction parameters are estimated or simplified.
+- The lumped-capacitance model assumes a uniform mean temperature for the styrene.
+- The main energy balance considers solar radiation and convection.
+- The wall-conduction calculation is illustrative only.
+- Internal heat generation due to styrene polymerization is not included in the current model.
+
+These limitations provide opportunities to discuss model assumptions and investigate additional physical mechanisms in future work.
+
+## Repository Contents
+
+- `styrene_accident_manaus.ipynb` — computational notebook.
+- `figures/meteorologia.png` — meteorological data.
+- `figures/energiaacumulada.png` — accumulated thermal energy.
+- `requirements.txt` — Python dependencies, if provided.
+
+## License and Use
+
+Please consult the repository license, if available, for reuse conditions. When using the notebook or figures in academic or educational work, cite the repository and the relevant data sources.
